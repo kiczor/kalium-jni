@@ -150,3 +150,31 @@ int crypto_sign_ed25519(unsigned char *sm, unsigned long long *smlen,
 int crypto_sign_ed25519_open(unsigned char *m, unsigned long long *mlen,
                              const unsigned char *sm, unsigned long long smlen,
                              const unsigned char *pk);
+
+
+
+
+
+int crypto_box_keypair(unsigned char *pk, unsigned char *sk);
+
+void randombytes_buf(void * const buf, const size_t size);
+
+int crypto_scalarmult_base(unsigned char *q, const unsigned char *n);
+
+int crypto_scalarmult(unsigned char *q, const unsigned char *n, const unsigned char *p);
+
+int crypto_sign(unsigned char *sm, unsigned long long *smlen, const unsigned char *m, unsigned long long mlen, const unsigned char *sk);
+
+int crypto_sign_open(unsigned char *m, unsigned long long *mlen, const unsigned char *sm, unsigned long long smlen, const unsigned char *pk);
+
+int crypto_secretbox(unsigned char *c, const unsigned char *m, unsigned long long mlen, const unsigned char *n, const unsigned char *k);
+
+int crypto_secretbox_open(unsigned char *m, const unsigned char *c, unsigned long long clen, const unsigned char *n, const unsigned char *k);
+
+char *sodium_bin2hex(char * const hex, const size_t hex_maxlen, const unsigned char * const bin, const size_t bin_len);
+
+int sodium_hex2bin(unsigned char * const bin, const size_t bin_maxlen, const char * const hex, const size_t hex_len, const char * const ignore, size_t * const bin_len, const char ** const hex_end);
+
+
+
+
